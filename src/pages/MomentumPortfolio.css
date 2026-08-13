@@ -1,0 +1,131 @@
+.momentum-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.momentum-intro .checklist-note {
+  margin-bottom: 10px;
+}
+
+.momentum-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.momentum-summary .refresh-button {
+  margin-left: auto;
+}
+
+.momentum-table-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.momentum-table-scroll {
+  overflow-x: auto;
+}
+
+.momentum-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.momentum-table th {
+  text-align: right;
+  color: #6b7280;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-bottom: 1px solid #1e222d;
+  position: sticky;
+  top: 0;
+  background: #131722;
+}
+
+.momentum-table th:nth-child(1),
+.momentum-table th:nth-child(2),
+.momentum-table td:nth-child(1),
+.momentum-table td:nth-child(2) {
+  text-align: left;
+}
+
+.momentum-table td {
+  text-align: right;
+  padding: 8px 12px;
+  border-bottom: 1px solid #1a1e29;
+}
+
+.row-in-portfolio {
+  background: rgba(38, 166, 154, 0.06);
+}
+
+.row-in-portfolio td:first-child {
+  box-shadow: inset 3px 0 0 #26a69a;
+}
+
+.cell-stock {
+  white-space: nowrap;
+}
+
+.stock-symbol-sm {
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.stock-name-sm {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.tag-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tag-entry {
+  color: #26a69a;
+  background: rgba(38, 166, 154, 0.15);
+}
+
+.tag-exit {
+  color: #ef5350;
+  background: rgba(239, 83, 80, 0.15);
+}
+
+.tag-neutral {
+  color: #6b7280;
+  background: rgba(107, 114, 128, 0.15);
+}
+
+.momentum-excluded {
+  padding: 16px;
+  border-top: 1px solid #1e222d;
+}
+
+.momentum-excluded .checklist-note {
+  margin-bottom: 10px;
+}
+
+.excluded-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.excluded-chip {
+  font-size: 11px;
+  color: #8b93a3;
+  background: #0d0e14;
+  border: 1px solid #2a2e3a;
+  border-radius: 999px;
+  padding: 3px 9px;
+}

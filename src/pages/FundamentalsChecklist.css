@@ -1,0 +1,169 @@
+.checklist-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 24px;
+  max-width: 900px;
+}
+
+.checklist-intro .checklist-note {
+  margin-bottom: 12px;
+}
+
+.scorecard-line {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #d1d4dc;
+  background: #1a1e29;
+  border: 1px solid #1e222d;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.checklist-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.checklist-note {
+  color: #8b93a3;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.checklist-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group-label {
+  font-size: 13px;
+  color: #d1d4dc;
+  font-weight: 500;
+}
+
+.year-inputs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.year-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.year-input input,
+.number-field input,
+.select-field select {
+  background: #0d0e14;
+  border: 1px solid #2a2e3a;
+  border-radius: 4px;
+  color: #d1d4dc;
+  padding: 6px 8px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.number-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #d1d4dc;
+}
+
+.number-field-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 160px;
+}
+
+.number-field-input input {
+  width: 100%;
+}
+
+.suffix {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.select-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #d1d4dc;
+}
+
+.select-field select {
+  width: 160px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #d1d4dc;
+}
+
+.computed {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.verdict {
+  font-size: 13px;
+  color: #d1d4dc;
+  background: #0d0e14;
+  border-left: 3px solid #2a2e3a;
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge-good {
+  color: #26a69a;
+  background: rgba(38, 166, 154, 0.15);
+}
+
+.badge-warn {
+  color: #d9a441;
+  background: rgba(217, 164, 65, 0.15);
+}
+
+.badge-bad {
+  color: #ef5350;
+  background: rgba(239, 83, 80, 0.15);
+}
+
+.badge-info {
+  color: #6b7280;
+  background: rgba(107, 114, 128, 0.15);
+}

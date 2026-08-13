@@ -1,7 +1,8 @@
-// Routed through the Vite dev-server proxy (vite.config.ts) — same CORS
-// situation as the Yahoo endpoint: archives.nseindia.com sends no
-// Access-Control-Allow-Origin header, so this only works under `npm run dev`.
-const NSE_EQUITY_LIST_URL = "/nse-api/content/equities/EQUITY_L.csv";
+// Same CORS situation as yahooChart.ts: archives.nseindia.com sends no
+// Access-Control-Allow-Origin header. Vite's dev proxy handles this path in
+// `npm run dev`; the Vercel function at api/nse/[...path].ts handles it in
+// production.
+const NSE_EQUITY_LIST_URL = "/api/nse/content/equities/EQUITY_L.csv";
 
 export interface NseEquity {
   symbol: string; // bare NSE ticker, no .NS suffix

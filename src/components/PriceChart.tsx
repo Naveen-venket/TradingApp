@@ -22,6 +22,8 @@ export default function PriceChart({ symbol, candles }: PriceChartProps) {
   useEffect(() => {
     if (!containerRef.current) return;
 
+    const chartHeight = () => (window.innerWidth < 640 ? 260 : 380);
+
     const chart = createChart(containerRef.current, {
       layout: { background: { color: "#131722" }, textColor: "#d1d4dc" },
       grid: {
@@ -29,7 +31,7 @@ export default function PriceChart({ symbol, candles }: PriceChartProps) {
         horzLines: { color: "#1e222d" },
       },
       width: containerRef.current.clientWidth,
-      height: 380,
+      height: chartHeight(),
       timeScale: { timeVisible: true, secondsVisible: false },
     });
 
@@ -46,7 +48,7 @@ export default function PriceChart({ symbol, candles }: PriceChartProps) {
 
     const handleResize = () => {
       if (containerRef.current) {
-        chart.applyOptions({ width: containerRef.current.clientWidth });
+        chart.applyOptions({ width: containerRef.current.clientWidth, height: chartHeight() });
       }
     };
     window.addEventListener("resize", handleResize);

@@ -29,6 +29,7 @@
 .verdict-filter-group,
 .criterion-filter-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 
@@ -71,8 +72,86 @@
   color: #ef5350;
 }
 
+.scan-controls {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.scan-button {
+  background: #1e2637;
+  border: 1px solid #3a4258;
+  color: #d1d4dc;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.scan-button:hover:not(:disabled) {
+  background: #263049;
+}
+
+.scan-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.scan-hint {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.scan-progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  font-size: 12px;
+  color: #8b93a3;
+}
+
+.scan-progress-bar {
+  width: 160px;
+  max-width: 100%;
+  height: 6px;
+  background: #1a1e29;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.scan-progress-fill {
+  height: 100%;
+  background: #26a69a;
+  transition: width 0.2s ease;
+}
+
+.scan-progress-label {
+  flex: 1;
+  min-width: 160px;
+}
+
+.scan-cancel {
+  background: transparent;
+  border: 1px solid #2a2e3a;
+  color: #8b93a3;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.scan-cancel:hover {
+  background: #1a1e29;
+}
+
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-top: 12px;
@@ -112,11 +191,22 @@
 
 .stock-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* auto-fit (not auto-fill): with only a handful of results — common once
+     a filter narrows things down — auto-fill still reserves empty tracks
+     and squeezes real cards into the minimum width. auto-fit collapses
+     the empty tracks so existing cards stretch to fill the row instead. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 14px;
 }
 
+@media (max-width: 360px) {
+  .stock-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .stock-card {
+  container-type: inline-size;
   background: #131722;
   border: 1px solid #1e222d;
   border-left: 4px solid #2a2e3a;
@@ -207,10 +297,25 @@
 
 .criteria-list li {
   display: grid;
-  grid-template-columns: 16px 1fr auto;
-  gap: 8px;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  gap: 4px 8px;
   align-items: baseline;
   font-size: 12px;
+}
+
+/* Keyed to the card's own width, not the viewport — a card can end up
+   narrow either on a small phone or on a wide desktop when a filter/scan
+   leaves only a couple of matches (see .stock-card-grid comment above). */
+@container (max-width: 340px) {
+  .criteria-list li {
+    grid-template-columns: 16px minmax(0, 1fr);
+  }
+
+  .crit-detail {
+    grid-column: 2;
+    white-space: normal;
+    text-align: left;
+  }
 }
 
 .crit-mark {

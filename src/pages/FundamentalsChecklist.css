@@ -59,6 +59,12 @@
   gap: 8px;
 }
 
+@media (max-width: 480px) {
+  .year-inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .year-input {
   display: flex;
   flex-direction: column;
@@ -82,8 +88,9 @@
 .number-field {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px 12px;
   font-size: 13px;
   color: #d1d4dc;
 }
@@ -93,10 +100,12 @@
   align-items: center;
   gap: 6px;
   width: 160px;
+  max-width: 100%;
 }
 
 .number-field-input input {
   width: 100%;
+  min-width: 0;
 }
 
 .suffix {
@@ -107,13 +116,16 @@
 .select-field {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 8px 12px;
   font-size: 13px;
   color: #d1d4dc;
 }
 
 .select-field select {
   width: 160px;
+  max-width: 100%;
 }
 
 .checkbox-field {

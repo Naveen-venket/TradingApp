@@ -26,8 +26,23 @@
   overflow: hidden;
 }
 
+.scroll-hint {
+  display: none;
+  margin: 0;
+  padding: 8px 14px 0;
+  font-size: 11px;
+  color: #6b7280;
+}
+
 .momentum-table-scroll {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 720px) {
+  .scroll-hint {
+    display: block;
+  }
 }
 
 .momentum-table {

@@ -85,6 +85,7 @@ export default function MomentumPortfolio() {
         <p className="dashboard-status">Loading momentum data for {CURATED_UNIVERSE.length} stocks…</p>
       ) : (
         <div className="panel momentum-table-panel">
+          <p className="scroll-hint">Swipe to see more columns →</p>
           <div className="momentum-table-scroll">
             <table className="momentum-table">
               <thead>

@@ -1,8 +1,9 @@
-// Routed through the Vite dev-server proxy (vite.config.ts) to avoid the
-// browser CORS block on query1.finance.yahoo.com. That proxy only exists in
-// `npm run dev` — a production deployment needs its own backend/serverless
-// proxy in front of this same endpoint.
-const CHART_BASE = "/yahoo-api/v8/finance/chart";
+// Routed to a proxy in front of query1.finance.yahoo.com to avoid the
+// browser CORS block (it sends no Access-Control-Allow-Origin header).
+// In `npm run dev` this hits Vite's dev-server proxy (vite.config.ts); in
+// production it hits the Vercel serverless function at api/yahoo/[...path].ts.
+// Same relative path either way, so the frontend code doesn't need to care.
+const CHART_BASE = "/api/yahoo/v8/finance/chart";
 
 export interface YahooBar {
   time: number;
